@@ -5,6 +5,7 @@ using Discord;
 using Discord.WebSocket;
 using Discord.Net;
 using NLog.Fluent;
+using DotNetEnv;
 
 namespace TomBot_Sharp
 {
@@ -14,9 +15,12 @@ namespace TomBot_Sharp
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         private DiscordSocketClient _client;
-        
+
         static void Main(string[] args)
-            => new Program().MainAsync().GetAwaiter().GetResult();
+        {
+            DotNetEnv.Env.Load();
+            new Program().MainAsync().GetAwaiter().GetResult();
+        }
 
 
         public async Task MainAsync()
