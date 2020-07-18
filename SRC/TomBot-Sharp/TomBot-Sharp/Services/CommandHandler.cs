@@ -39,17 +39,19 @@ namespace TomBot_Sharp.Services
             
             int argPos = 0;
             if (!message.HasMentionPrefix(_discord.CurrentUser, ref argPos)) return;
-            Logger.Info($"Command issued. Channel: {message.Channel.Name} Author: {message.Author.Username}, Content: {message.Content}");
+            Logger.Info($"Command issued. Server: {((SocketGuildChannel)message.Channel).Guild.Name} Channel: {message.Channel.Name} Author: {message.Author.Username}, Content: {message.Content}");
 
 
             //
             var context = new SocketCommandContext(_discord, message);
             var result = await _commands.ExecuteAsync(context, argPos, _provider);
-            
-            if (result.Error.HasValue && 
+
+            if (result.Error.HasValue &&
                 result.Error.Value != CommandError.UnknownCommand)
+            {
+                Logger.Error(result.ToString());
                 await context.Channel.SendMessageAsync(result.ToString());
-           
+            }
         }
     }
 }
