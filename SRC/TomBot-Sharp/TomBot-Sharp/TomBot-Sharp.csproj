@@ -26,9 +26,6 @@
 
   <ItemGroup>
     <None Remove="version.txt" />
-    <EmbeddedResource Include="version.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
 
 

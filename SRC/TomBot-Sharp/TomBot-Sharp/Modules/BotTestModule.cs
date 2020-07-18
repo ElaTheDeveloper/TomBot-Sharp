@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
+
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
@@ -48,8 +49,7 @@ namespace TomBot_Sharp.Modules
         [Summary("Get TomBot version information")]
         public async Task SendVerInfoAsync()
         {
-            
-            await ReplyAsync($"TomBot-Sharp version {Assembly.GetExecutingAssembly().GetName().Version}");
+            await ReplyAsync($"TomBot-Sharp version {Assembly.GetExecutingAssembly().GetName().Version}. Running on {Environment.OSVersion.ToString()} (Processor Count (cores+threads): {Environment.ProcessorCount.ToString()})");
         }
     }
 }

@@ -108,5 +108,7 @@ namespace TomBot_Sharp
                 .AddSingleton<CommandHandler>()
                 .BuildServiceProvider();
         }
+        
+        
     }
 }
