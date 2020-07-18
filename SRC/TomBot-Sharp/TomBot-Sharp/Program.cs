@@ -1,11 +1,21 @@
 ﻿using System;
+using System.Security.Authentication.ExtendedProtection;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Microsoft.Extensions.DependencyInjection;
+
 using Discord;
 using Discord.WebSocket;
+using Discord.Commands;
 using Discord.Net;
+
 using NLog.Fluent;
+
 using DotNetEnv;
+
+using TomBot_Sharp.Services;
+
 
 namespace TomBot_Sharp
 {
@@ -15,7 +25,7 @@ namespace TomBot_Sharp
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         private DiscordSocketClient _client;
-
+        private CommandService _commands;
         static void Main(string[] args)
         {
             DotNetEnv.Env.Load();
@@ -27,18 +37,16 @@ namespace TomBot_Sharp
         {
             Logger.Info("TomBot MainAsync() Started");
             _client = new DiscordSocketClient();
-
             _client.Log += Log;
 
+            _commands = new CommandService();
             
-            _client.MessageReceived += MessageReceived;
             
-            // Remember to keep token private or to read it from an 
-            // external source! In this case, we are reading the token 
-            // from an environment variable. If you do not know how to set-up
-            // environment variables, you may find more information on the 
-            // Internet or by using other methods such as reading from 
-            // a configuration.
+            
+            // _client.MessageReceived += MessageReceived;
+            var services = ConfigureServices();
+            await services.GetRequiredService<CommandHandler>().InitializeAsync(services);
+            
             Logger.Info("Using Discord Token: " + Environment.GetEnvironmentVariable("DiscordToken"));
             Logger.Info("Logging into Discord now!");
             await _client.LoginAsync(TokenType.Bot, 
@@ -88,6 +96,17 @@ namespace TomBot_Sharp
                     break;
             }
             return Task.CompletedTask;
+        }
+
+        private IServiceProvider ConfigureServices()
+        {
+            Logger.Info("Configuring servies");
+            return new ServiceCollection()
+                .AddSingleton(_client)
+                .AddSingleton(_commands)
+                .AddSingleton<CommandService>()
+                .AddSingleton<CommandHandler>()
+                .BuildServiceProvider();
         }
     }
 }
