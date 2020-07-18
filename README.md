@@ -31,6 +31,7 @@ TomBot Sharp is a Discord Bot.
 - TomBot builds to DotNet Core 2.1. This is because of Discord.Net.
 - TomBot uses Discord.Net for its Discord library.
 - Remember to drink while coding.
+- TomBot requires build events. Please enable this feature in your build process options if using Rider. If you are not using Rider or Visual Studio, build in one of these.
 
 
 
