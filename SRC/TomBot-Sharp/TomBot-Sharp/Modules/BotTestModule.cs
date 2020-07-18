@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -45,20 +47,14 @@ namespace TomBot_Sharp.Modules
         [Summary("Get TomBot version information")]
         public async Task SendVerInfoAsync()
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo("git");
 
-            startInfo.UseShellExecute = true;
-            startInfo.WorkingDirectory = "dir Here";
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.Arguments = "rev-parse --abbrev-ref HEAD";
+            string version = string.Empty;
 
-            Process process = new Process();
-            process.StartInfo = startInfo;
-            process.Start();
-
-            string branchname = process.StandardOutput.ReadLine();
-            await ReplyAsync($"TomBot-Sharp. Git Commit: {branchname}");
+            Stream stream = Assembly.GetExecutingAssembly()
+                .GetManifestResourceStream("TomBot_Sharp." + "version.txt");
+            StreamReader reader = new StreamReader(stream);
+            version = reader.ReadToEnd();
+            await ReplyAsync($"TomBot-Sharp. Git Commit: {version}");
         }
     }
 }

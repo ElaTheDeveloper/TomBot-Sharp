@@ -22,6 +22,13 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="version.txt" />
+    <EmbeddedResource Include="version.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="&quot;C:\Program Files\Git\bin\git.exe&quot;  log -n 1 --oneline &gt; &quot;$(ProjectDir)\version.txt&quot;" />
   </Target>
