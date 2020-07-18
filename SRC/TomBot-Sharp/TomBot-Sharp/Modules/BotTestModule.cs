@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -47,14 +48,8 @@ namespace TomBot_Sharp.Modules
         [Summary("Get TomBot version information")]
         public async Task SendVerInfoAsync()
         {
-
-            string version = string.Empty;
-
-            Stream stream = Assembly.GetExecutingAssembly()
-                .GetManifestResourceStream("TomBot_Sharp." + "version.txt");
-            StreamReader reader = new StreamReader(stream);
-            version = reader.ReadToEnd();
-            await ReplyAsync($"TomBot-Sharp. Git Commit: {version}");
+            
+            await ReplyAsync($"TomBot-Sharp version {Assembly.GetExecutingAssembly().GetName().Version}");
         }
     }
 }

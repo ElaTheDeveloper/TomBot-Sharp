@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>TomBot_Sharp</RootNamespace>
+    <AssemblyVersion>2020.7.19.1</AssemblyVersion>
+    <FileVersion>2020.7.19.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,8 +31,5 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="&quot;C:\Program Files\Git\bin\git.exe&quot;  log -n 1 --oneline &gt; &quot;$(ProjectDir)\version.txt&quot;" />
-  </Target>
 
 </Project>
