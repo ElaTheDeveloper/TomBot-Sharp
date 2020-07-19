@@ -25,6 +25,7 @@ namespace TomBot_Sharp
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         private DiscordSocketClient _client;
+        private RandomQuotePicker _randomQuotePicker;
         private CommandService _commands;
         static void Main(string[] args)
         {
@@ -40,10 +41,10 @@ namespace TomBot_Sharp
             _client.Log += Log;
 
             _commands = new CommandService();
-            
-            
-            
-            // _client.MessageReceived += MessageReceived;
+            _randomQuotePicker = new RandomQuotePicker();
+
+            _client.MessageReceived += _randomQuotePicker.MessageReceived;
+          
             var services = ConfigureServices();
             await services.GetRequiredService<CommandHandler>().InitializeAsync(services);
             
@@ -60,17 +61,6 @@ namespace TomBot_Sharp
             
             // Block this task until the program is closed.
             await Task.Delay(-1);
-        }
-        private async Task MessageReceived(SocketMessage message)
-        { 
-            //This is horrific and needs replacing with something better
-            Logger.Info(
-                $"Message Recieved. Channel: {message.Channel.Name} Author: {message.Author.Username}, Content: {message.Content}");
-            if (message.Content == "!ping")
-            {
-                Logger.Info("Hello World! command response.");
-                await message.Channel.SendMessageAsync("Pong!");
-            }
         }
         private Task Log(LogMessage msg)
         {
