@@ -7,10 +7,35 @@ TomBot Sharp is a Discord Bot.
 
 
 
+## Running TomBot
+
+1. Have the dotnetcore runtime setup.
+2. Download the release
+3. Create a .env file (see below)
+4. run `dotnet TomBot-Sharp.dll`
+
+### The `.env` File
+
+Your .env file needs to be placed in the root of the bot's folder and **must** be called `.env`. The contents should be as follows:
+
+```environment
+DiscordToken="YOUR TOKEN GOES IN THESE QUOTEMARKS"
+Prefix=!
+```
+
+The settings are:
+
+| #### Item    | #### Description                                             |
+| ------------ | ------------------------------------------------------------ |
+| DiscordToken | Your Discord Bot's token, obtained from the API site.        |
+| Prefix       | The prefix for all commands. It can be a string, but a single character is recommended. |
+
+
+
 ## Contributing
 
  TomBot is built in C# for DotNet Core. While this can be developed in Visual Studio, VS Code or really any text editor you want, I (Ela) use JetBrains Rider because I get it free. If you are a student/affiliated with an academic organisation, you can get it free as well. More info is [here](https://www.jetbrains.com/community/education/#students). 
- 
+
  Only Ela and those approved may work on the "dev" branch and only Ela may work on the "master" branch.
 
 
