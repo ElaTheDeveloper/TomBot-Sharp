@@ -32,7 +32,6 @@ namespace TomBot_Sharp.Modules
                     Description = "Here is the information on how to contribute to TomBot!",
                     ThumbnailUrl = Context.Client.CurrentUser.GetAvatarUrl(),
                     Color = new Color(0,76,161)
-                    
                 }
                 .AddField("Quotes",
                     "Use the addquote command to add quotes from Citation Needed, Two Of These People Are Lying and The Audio Episodes.")
@@ -50,6 +49,16 @@ namespace TomBot_Sharp.Modules
         public async Task SendVerInfoAsync()
         {
             await ReplyAsync($"TomBot-Sharp version {Assembly.GetExecutingAssembly().GetName().Version}. Running on {Environment.OSVersion.ToString()} (Processor Count (cores+threads): {Environment.ProcessorCount.ToString()})");
+        }
+
+        [Command("Uptime")]
+        [Summary("Get the current uptime of TomBot")]
+        [Alias("ut", "up")]
+        public async Task SendUptimeAsync()
+        {
+            TimeSpan uptime = DateTime.UtcNow - Process.GetCurrentProcess().StartTime.ToUniversalTime();
+            await ReplyAsync($"TomBot Uptime is currently {uptime.Days} days {uptime.Hours} hours {uptime.Minutes} minutes and {uptime.Seconds} seconds.");
+
         }
     }
 }
