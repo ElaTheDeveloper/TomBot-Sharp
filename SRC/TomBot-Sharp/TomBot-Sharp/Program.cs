@@ -27,6 +27,7 @@ namespace TomBot_Sharp
         private DiscordSocketClient _client;
         private RandomQuotePicker _randomQuotePicker;
         private CommandService _commands;
+        private CustomCommandHandler _customCommandHandler;
         static void Main(string[] args)
         {
             DotNetEnv.Env.Load();
@@ -45,6 +46,10 @@ namespace TomBot_Sharp
 
             _client.MessageReceived += _randomQuotePicker.MessageReceived;
           
+            
+            _customCommandHandler = new CustomCommandHandler(_client);
+            _client.MessageReceived += _customCommandHandler.MessageReceived;
+            
             var services = ConfigureServices();
             await services.GetRequiredService<CommandHandler>().InitializeAsync(services);
             
