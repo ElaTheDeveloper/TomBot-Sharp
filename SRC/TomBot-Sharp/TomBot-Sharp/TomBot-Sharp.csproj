@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>TomBot_Sharp</RootNamespace>
-    <AssemblyVersion>2020.7.19.1</AssemblyVersion>
-    <FileVersion>2020.7.19.1</FileVersion>
+    <AssemblyVersion>2020.7.20.2</AssemblyVersion>
+    <FileVersion>2020.7.20.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +20,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update=".env">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="quotes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
