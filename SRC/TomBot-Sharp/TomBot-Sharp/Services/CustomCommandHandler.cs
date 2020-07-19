@@ -46,7 +46,8 @@ namespace TomBot_Sharp.Services
             if (message.Source != MessageSource.User) return;
 
             int argPos = 0;
-            if (!message.Content.StartsWith("!")) return;
+            // if (!message.Content.StartsWith("!")) return;
+            if (!message.HasStringPrefix(Environment.GetEnvironmentVariable("Prefix"), ref argPos)) return;
             var context = new SocketCommandContext(_discord, message);
             String commandToRun = message.Content.Replace("!", "");
 

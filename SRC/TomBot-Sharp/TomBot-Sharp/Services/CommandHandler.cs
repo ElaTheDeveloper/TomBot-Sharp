@@ -38,7 +38,8 @@ namespace TomBot_Sharp.Services
             if (message.Source != MessageSource.User) return;
             
             int argPos = 0;
-            if (!message.HasMentionPrefix(_discord.CurrentUser, ref argPos)) return;
+           // if (!message.HasMentionPrefix(_discord.CurrentUser, ref argPos)) return;
+           if (!message.HasStringPrefix(Environment.GetEnvironmentVariable("Prefix"), ref argPos)) return;
             Logger.Info($"Command issued. Server: {((SocketGuildChannel)message.Channel).Guild.Name} Channel: {message.Channel.Name} Author: {message.Author.Username}, Content: {message.Content}");
 
 
