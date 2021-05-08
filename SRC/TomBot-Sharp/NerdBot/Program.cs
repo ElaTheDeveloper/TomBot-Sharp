@@ -13,11 +13,10 @@ using Discord.Net;
 using NLog.Fluent;
 
 using DotNetEnv;
+using NerdBot.Services;
 
-using TomBot_Sharp.Services;
 
-
-namespace TomBot_Sharp
+namespace NerdBot
 {
     class Program
     {
@@ -37,7 +36,7 @@ namespace TomBot_Sharp
 
         public async Task MainAsync()
         {
-            Logger.Info("TomBot MainAsync() Started");
+            Logger.Info("NerdBot MainAsync() Started");
             _client = new DiscordSocketClient();
             _client.Log += Log;
 

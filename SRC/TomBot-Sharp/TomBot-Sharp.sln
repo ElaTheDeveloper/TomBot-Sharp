@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomBot-Sharp", "TomBot-Sharp\TomBot-Sharp.csproj", "{9667F47F-5550-4E97-86ED-669F36A4D4A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdBot", "NerdBot\NerdBot.csproj", "{9667F47F-5550-4E97-86ED-669F36A4D4A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,7 +3,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 
 
-namespace TomBot_Sharp.Modules
+namespace NerdBot.Modules
 {
     public class InfoModule : ModuleBase<SocketCommandContext>
     {
@@ -20,11 +20,11 @@ namespace TomBot_Sharp.Modules
         }
 
         [Command("about")]
-        [Summary("A little bit about TomBot")]
+        [Summary("A little bit about NerdBot")]
         public async Task AboutTBAsync()
         {
             await ReplyAsync(
-                "TomBot-Sharp. Written By ElaTheDeveloper - Contribute on GitHub! - We flew a kite in a public place!");
+                "NerdBot. Written By ElaTheDeveloper - Contribute on GitHub! - We flew a kite in a public place!");
         }
     }
 }

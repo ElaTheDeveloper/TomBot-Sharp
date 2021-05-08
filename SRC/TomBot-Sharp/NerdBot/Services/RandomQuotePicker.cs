@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Discord.WebSocket;
 
-namespace TomBot_Sharp.Services
+namespace NerdBot.Services
 {
     public class RandomQuotePicker
     {

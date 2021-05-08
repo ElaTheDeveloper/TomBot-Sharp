@@ -6,7 +6,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 
 
-namespace TomBot_Sharp.Services
+namespace NerdBot.Services
 {
     public class CommandHandler
     {

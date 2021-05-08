@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>TomBot_Sharp</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>NerdBot_Sharp</RootNamespace>
     <AssemblyVersion>2020.7.20.2</AssemblyVersion>
     <FileVersion>2020.7.20.1</FileVersion>
   </PropertyGroup>

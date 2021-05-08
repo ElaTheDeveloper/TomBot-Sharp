@@ -9,7 +9,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 
 
-namespace TomBot_Sharp.Modules
+namespace NerdBot.Modules
 {
     public class FeedsModule : ModuleBase<SocketCommandContext>
     {

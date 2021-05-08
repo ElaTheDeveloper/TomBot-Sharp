@@ -8,7 +8,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Newtonsoft.Json;
 
-namespace TomBot_Sharp.Services
+namespace NerdBot.Services
 {
     public class CustomCommandHandler
     {

@@ -6,7 +6,7 @@ using Discord.WebSocket;
 using System.IO;
 
 
-namespace TomBot_Sharp.Modules
+namespace NerdBot.Modules
 {
     public class QuoteModule : ModuleBase<SocketCommandContext>
     {
@@ -34,7 +34,7 @@ namespace TomBot_Sharp.Modules
 
         [Command("quote")]
         [Summary(
-            "Have TomBot tell you a random quote from Citation Needed, Tech Diff or Two Of These People Are Lying.")]
+            "Have NerdBot tell you a random quote.")]
         [Alias("q")]
         public async Task GetQuoteAsync()
         {
