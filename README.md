@@ -1,11 +1,16 @@
 # NerdBot-Sharp
 C# Version of NerdBot
-
-
-
 NerdBot Sharp is a Discord Bot.
+<br />
+<a href='https://ko-fi.com/elathedeveloper' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<a href="https://www.patreon.com/bePatron?u=42078320" style='border:"1px solid #FF424D";border-radius:10px;'><img height='35' style='border:"1px solid #FF424D";border-radius:10px;height:46px;' src='https://cloakandmeeple.files.wordpress.com/2017/06/become_a_patron_button3x.png' border='0' alt='Become a Patron'/></a>
 
-
+# Support Development
+If you wish to support development, you can help by sponsoring. There are two main ways, through Ko-Fi and Patreon.
+## Ko-Fi
+Ko-Fi allows for one off donations, with as little as £1. You can find Ela's Ko-Fi page linked in the sponsorship section of GitHub.
+## Patreon
+If you want to help cover the costs of hosting the bot, you can set up a monthly donation through Patreon. Tiers start at £1.
 
 ## Running NerdBot
 
