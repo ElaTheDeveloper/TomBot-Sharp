@@ -12,6 +12,7 @@ Ko-Fi allows for one off donations, with as little as £1. You can find Ela's Ko
 ## Patreon
 If you want to help cover the costs of hosting the bot, you can set up a monthly donation through Patreon. Tiers start at £1.
 
+# Main Readme
 ## Running NerdBot
 
 1. Have the dotnetcore runtime setup.
