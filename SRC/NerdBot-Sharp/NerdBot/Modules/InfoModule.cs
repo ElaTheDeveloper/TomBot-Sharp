@@ -47,7 +47,7 @@ namespace NerdBot.Modules
             EmbedBuilder embedBuilder = new EmbedBuilder();
             embedBuilder.WithAuthor(Context.Client.CurrentUser)
                 .WithColor(Color.Gold)
-                .WithDescription("These are all the commands I understand! Run one by adding ! before it.\n[Support NerdBot](https://patreon.com/elathedeveloper)")
+                .WithDescription("These are all the commands I understand! Run one by adding ! before it.\n[Support NerdBot](https://github.com/ElaTheDeveloper/NerdBot-Sharp)")
                 .WithTitle("NerdBot Help")
                 .WithFooter($"{commands.Count} commands in database")
                 .WithCurrentTimestamp();

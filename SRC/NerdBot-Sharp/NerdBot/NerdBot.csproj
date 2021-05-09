@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>NerdBot_Sharp</RootNamespace>
-    <AssemblyVersion>2020.7.20.2</AssemblyVersion>
-    <FileVersion>2020.7.20.1</FileVersion>
+    <AssemblyVersion>2021.05.09.3</AssemblyVersion>
+    <FileVersion>2021.05.09.5</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
