@@ -21,7 +21,7 @@ namespace NerdBot.Modules
         public async Task LatestCNAsync()
         {
             FeedItem item = ParseFeed("https://www.youtube.com/feeds/videos.xml?playlist_id=PL96C35uN7xGIo2odDuuPeYtb7BtQ1kBhp");
-            int maxLength = 1000;
+            //int maxLength = 1000;
             var embed = new EmbedBuilder()
                 {
                     Title = item.Title,
@@ -39,7 +39,7 @@ namespace NerdBot.Modules
         public async Task LatestTotplAsync()
         {
             FeedItem item = ParseFeed("https://www.youtube.com/feeds/videos.xml?playlist_id=PLfx61sxf1Yz2I-c7eMRk9wBUUDCJkU7H0");
-            int maxLength = 1000;
+            // int maxLength = 1000;
             var embed = new EmbedBuilder()
                 {
                     Title = item.Title,

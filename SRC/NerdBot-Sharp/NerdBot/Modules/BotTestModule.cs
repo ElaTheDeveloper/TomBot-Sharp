@@ -36,7 +36,7 @@ namespace NerdBot.Modules
                 .AddField("Quotes",
                     "Use the addquote command to add quotes.")
                 .AddField("Code",
-                    "If you like to write C#, let Ela know!")
+                    "If you like to write C#, let Ela know or visit the [GitHub](https://github.com/ElaTheDeveloper/NerdBot-Sharp).")
                 .AddField("Hosting", "NerdBot is hosted on a VPS, and therefore costs to host. If you want to cover a month's hosting (about $5 or £4), you can support Ela on [Patreon here](https://patreon.com/elathedeveloper)")
                 .WithFooter("Thanks for helping out!")
                 .WithCurrentTimestamp()
