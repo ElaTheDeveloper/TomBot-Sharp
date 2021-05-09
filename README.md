@@ -1,18 +1,18 @@
-# TomBot-Sharp
-C# Version of TomBot
+# NerdBot-Sharp
+C# Version of NerdBot
 
 
 
-TomBot Sharp is a Discord Bot.
+NerdBot Sharp is a Discord Bot.
 
 
 
-## Running TomBot
+## Running NerdBot
 
 1. Have the dotnetcore runtime setup.
 2. Download the release
 3. Create a .env file (see below)
-4. run `dotnet TomBot-Sharp.dll`
+4. run `dotnet NerdBot-Sharp.dll`
 
 ### The `.env` File
 
@@ -34,7 +34,7 @@ The settings are:
 
 ## Contributing
 
- TomBot is built in C# for DotNet Core. While this can be developed in Visual Studio, VS Code or really any text editor you want, I (Ela) use JetBrains Rider because I get it free. If you are a student/affiliated with an academic organisation, you can get it free as well. More info is [here](https://www.jetbrains.com/community/education/#students). 
+ NerdBot is built in C# for DotNet Core. While this can be developed in Visual Studio, VS Code or really any text editor you want, I (Ela) use JetBrains Rider because I get it free. If you are a student/affiliated with an academic organisation, you can get it free as well. More info is [here](https://www.jetbrains.com/community/education/#students). 
 
  Only Ela and those approved may work on the "dev" branch and only Ela may work on the "master" branch.
 
@@ -53,8 +53,8 @@ The settings are:
 
 ### Important Notes
 
-- TomBot builds to DotNet Core 2.1. This is because of Discord.Net.
-- TomBot uses Discord.Net for its Discord library.
+- NerdBot builds to DotNet Core 5.05. This is because of Discord.Net.
+- NerdBot uses Discord.Net for its Discord library.
 - Remember to drink while coding.
 
 
