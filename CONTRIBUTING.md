@@ -4,6 +4,8 @@
  
  Only Ela and those approved may work on the "dev" branch and only Ela may work on the "master" branch.
 
+# We Now Use FLow. Ignore the Getting the code bit.
+[Follow this now](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 
 ## Getting the code
