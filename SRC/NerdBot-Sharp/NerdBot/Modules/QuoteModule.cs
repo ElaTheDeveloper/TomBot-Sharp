@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
 using System.IO;
+using NLog;
 
 
 namespace NerdBot.Modules
@@ -36,16 +37,36 @@ namespace NerdBot.Modules
         [Summary(
             "Have NerdBot tell you a random quote.")]
         [Alias("q")]
-        public async Task GetQuoteAsync()
+        public async Task GetQuoteAsync(params String[] amount)
         {
+            int count = 1;
+            Console.WriteLine($"Length {amount.Length.ToString()}");
+            if (amount.Length > 0)
+            {
+                if (!(int.TryParse(amount[0], out count)))
+                {
+                    count = 1;
+                    await ReplyAsync("Not a number!");
+                }
+            }
             String quote = String.Empty;
-            
-            String[] quotes = File.ReadAllLines("quotes.txt");
-            var r = new Random();
-            int randomLine = r.Next(0, quotes.Length - 1);
-            String line = quotes[randomLine];
 
-            await ReplyAsync(line.ToString());
+            if (count > 4)
+            {
+                await ReplyAsync("I can only send up to 4 messages at once!");
+                count = 3;
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                String[] quotes = File.ReadAllLines("quotes.txt");
+                var r = new Random();
+                int randomLine = r.Next(0, quotes.Length - 1);
+                String line = quotes[randomLine];
+
+                await ReplyAsync(line.ToString());
+            }
+            
         }
     }
 }
