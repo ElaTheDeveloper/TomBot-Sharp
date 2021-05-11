@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace NerdBot.Modules
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         
         
-        [Command("latestcn")]
+        [Command("randomcn")]
         [Summary("Returns the latest Citation Needed episode.")]
         public async Task LatestCNAsync()
         {
@@ -33,7 +34,7 @@ namespace NerdBot.Modules
                 .Build();
             await ReplyAsync(embed: embed);
         }
-        [Command("latestpeople")]
+        [Command("random2otp")]
         [Summary("Returns the latest Two Of These People Are Lying episode.")]
         [Alias("latestlying", "latesttwo", "latesttotpl", "totpl")]
         public async Task LatestTotplAsync()
@@ -52,12 +53,31 @@ namespace NerdBot.Modules
                 .Build();
             await ReplyAsync(embed: embed);
         }
-
+        [Command("randomwtyp")]
+        [Summary("Returns the latest Two Of These People Are Lying episode.")]
+        [Alias("wtyp")]
+        public async Task LatestWTYPAsync()
+        {
+            FeedItem item = ParseFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCPxHg4192hLDpTI2w7F9rPg");
+            // int maxLength = 1000;
+            var embed = new EmbedBuilder()
+                {
+                    Title = item.Title,
+                    Description = @"podcast about engineering going not good. by donoteat02, AliceAvizandum, oldmanders0n& friends.",
+                    ThumbnailUrl = "https://pbs.twimg.com/profile_images/1198008016299270147/2HtMrXDy_400x400.jpg",
+                    Color = new Color(0,76,161),
+                    Url = item.Link
+                }
+                .WithCurrentTimestamp()
+                .Build();
+            await ReplyAsync(embed: embed);
+        }
         private FeedItem ParseFeed(String url)
         {
+            Random rnd = new Random();
             var feed = FeedReader.ReadAsync(url);
             FeedItem[] itemList = feed.Result.Items.ToArray();
-            return itemList[0];
+            return itemList[rnd.Next(0, itemList.Length)];
         }
     }
 }
