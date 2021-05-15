@@ -27,6 +27,7 @@ namespace NerdBot
         private RandomQuotePicker _randomQuotePicker;
         private CommandService _commands;
         private CustomCommandHandler _customCommandHandler;
+        private InStatus _InStatus;
         static void Main(string[] args)
         {
             DotNetEnv.Env.Load();
@@ -42,8 +43,14 @@ namespace NerdBot
 
             _commands = new CommandService();
             _randomQuotePicker = new RandomQuotePicker();
+            _InStatus = new InStatus(_client);
 
             _client.MessageReceived += _randomQuotePicker.MessageReceived;
+            if(Environment.GetEnvironmentVariable("InStatusURL") != null && Environment.GetEnvironmentVariable("InStatusURL") != "")
+            {
+                _client.Connected +=_InStatus.ConnectEvent;
+                _client.Disconnected += _InStatus.DisconnectEvent;
+            }
           
             
             _customCommandHandler = new CustomCommandHandler(_client);

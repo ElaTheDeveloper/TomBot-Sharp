@@ -58,6 +58,7 @@ namespace NerdBot.Modules
         {
             TimeSpan uptime = DateTime.UtcNow - Process.GetCurrentProcess().StartTime.ToUniversalTime();
             await ReplyAsync($"NerdBot Uptime is currently {uptime.Days} days {uptime.Hours} hours {uptime.Minutes} minutes and {uptime.Seconds} seconds.");
+            await ReplyAsync($"Did the bot go down? Check https://elathedeveloper.instatus.com/ for status!");
 
         }
     }
